@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sample Agency | Statistics</title>
+    <script src="asd.js"></script>
+    <style>
+        /*This section would correspond to the commented form below*/
+    /*.bedct{display:block;}
+        .over{display: block;}
+        .beds:checked + .bedct{display:none;}
+        .over:checked + .overct{display:none;}
+        .beds:checked + .overct{display:none;}*/
+    </style>
+</head>
+
+<body onload="bdup(),bddown(),ovup(),ovdown()">
+
+<h1>This is an Agency</h1>
+<h2>Input Client Data</h2>
+<h3>Available Beds:</h3>
+<p id="bd"></p>
+<button onclick="bdup()">+</button>
+<button onclick="bddown()">-</button>
+<h3>Available Overflow:</h3>
+<p id="ov"></p>
+<button onclick="ovup()">+</button>
+<button onclick="ovdown()">-</button>
+<!--This form is a statistics management method that may be utilized at a later date-->
+<!--<form name="form1" action="sheet.html" method="post">
+    Beds Full?
+    <input class="beds" type="checkbox" id="bedful">
+    <div class="bedct">Beds Available:<input type="text" value=1></div>
+    <br>Overflow Full?
+    <input class="over" type="checkbox" id="overful">
+    <div class="overct">Overflow Sleeping Available:<input type="text" value=1></div>
+    <br><input type="submit" value="next">
+    <button type="button" id="print" onClick="moveJS()"></button>
+    
+</form>-->
+<script>
+//Sets variables for bed vacancy and overflow vacancy
+var bd = 50;
+var ov = 50;
+
+//Will serve to help port data to a spreadsheet
+function othername() {
+    var bedful = document.getElementById("bedful").value;
+}
+//Increment and decrement bed and overflow vacancy values
+function bdup() {
+    bd++;
+    document.getElementById("bd").innerHTML = bd;
+}
+function bddown() {
+    bd--;
+    document.getElementById("bd").innerHTML = bd;
+}
+function ovup() {
+    ov++;
+    document.getElementById("ov").innerHTML = ov;
+}
+function ovdown() {
+    ov--;
+    document.getElementById("ov").innerHTML = ov;
+}
+</script>
+</body>
+</html>

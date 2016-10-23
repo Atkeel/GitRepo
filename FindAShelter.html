@@ -1,0 +1,61 @@
+< !DOCTYPE html >
+<!-- created by: Minerva Pappu -->
+<html> <body>
+
+<p> Click the button to demonstrate the prompt box. </p>
+
+<button onclick="questionFunction()">Start</button>
+
+<p id = "demo"></p>
+
+<script>
+
+questionlist = ["How many in group?","Write the sex of each adult group member separated by commas. (e.g. female, male, female, female) If child, type n/a."]
+
+subquestionlist1 = ["How many under 18?","How many under 4?"]
+
+
+<!-- FUNCTION THAT PROVIDES QUESTIONS -->
+function questionFunction() {
+    <!-- FIRST QUESTION -->
+    var TOTNUM = prompt(questionlist[0]);
+    if (TOTNUM!= null) {
+        document.getElementById("demo1").innerHTML = TOTNUM;
+        <!-- SECOND QUESTION -->
+        var SEXALLMEM = prompt(questionlist[1]);
+            if (SEXALLMEM != null) {
+                document.getElementById("demo4").innerHTML = SEXALLMEM;
+            }
+        <!-- THIRD QUESTION -->
+        var UNDER18 = prompt(subquestionlist1[0]);
+            if (UNDER18 != 0) {
+                document.getElementById("demo2").innerHTML = UNDER18;
+                <!-- FOURTH QUESTION -->
+                var UNDER4 = prompt(subquestionlist1[1]);
+                document.getElementById("demo3").innerHTML = UNDER4;
+            }
+            else if (UNDER18 == 0) {
+                }
+            }
+        }
+
+</script>
+
+<!-- PRINTS USER INPUTS; this is here so that we know that the inputs are recorded and stored and able to be used later.
+later use would include fetching data from a Google Spreadsheet using Google Sheets API and placing important information in a list. -->
+<p id ="demo1"></p>
+<p id="demo2"></p>
+<p id = "demo3"></p>
+<p id="demo4"></p>
+
+<!-- Later code would:
+     create a list of shelters with vacancies
+     create a list of shelters which accept those under 18(should the client be so)
+     create a list of shelters which accept those over 18(should the client be so)
+     create a list of shelters which accept males
+     create a list of shelters which accept females
+     create a list of all overlapping shelters and print that list
+     for the client. -->
+
+</body>
+</html>
